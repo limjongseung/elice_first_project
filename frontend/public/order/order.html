@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./order.css">
+    <script type="module" src="./order.js" defer></script>
+
+    <!-- header/footer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <script src="../common/headerFooter.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="../common/headerFooter.css" />
+
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <section class="container">
+            <div class="container_header is-flex">
+                <h3><span>장바구니</span> > <span class="is-size-4 has-text-weight-bold">주문결제</span> >
+                    <span>주문완료 </span>
+                </h3>
+            </div>
+
+
+            <div class="content_wrap">
+                <section class="order_info box">
+                    <div>
+                        <h1 class="title is-6 mt-4 mb-6">배송지정보</h1>
+                    </div>
+                    <form class="order_form">
+                        <div class="field">
+                            <label class="label" for="name">이름</label>
+                            <div class="control">
+                                <input class="input" id="name" name="username" type="text" placeholder="이름을 입력해주세요."
+                                    maxlength="12" readonly />
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label" for="email">이메일</label>
+                            <div class="control">
+                                <input class="input" id="email" type="email" placeholder="이메일 주소를 입력해주세요." readonly
+                                    readonly />
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label" for="phone">연락처</label>
+                            <div class="control">
+                                <input class="input" id="phone" type="tel" placeholder="전화번호를 입력해주세요." readonly />
+                            </div>
+                        </div>
+
+                        <div class="field mb-0 pb-2">
+                            <label class="label" for="address">주소</label>
+                            <div class="control">
+                                <input class="input" id="zipcode" type="text" placeholder="우편번호를 입력해 주세요." readonly />
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <input class="input" id="address" type="text" placeholder="주소를 입력해 주세요." readonly />
+                            </div>
+                        </div>
+                </section>
+
+
+                <section class="right_menu">
+                    <div class="order_receipt">
+                        <h2>결제정보</h2>
+                        <div class="receipt">
+                            <div>총 상품금액</div>
+                            <div class="product_amount">13,500 원</div>
+                        </div>
+                        <div class="receipt">
+                            <div>배송비</div>
+                            <div class="delivery_fee">0 원</div>
+                        </div>
+                        <div class="receipt">
+                            <div>총 할인금액</div>
+                            <div id="discount">0 원</div>
+                        </div>
+                        <div class="total_price">
+                            <div>총 결제금액</div>
+                            <div id="total_price">13,500 원</div>
+                        </div>
+                        <div class="order_button">
+                            <button type="submit" class="order_button">결제하기</button>
+                        </div>
+                    </div>
+                    <div class="backbtn pt-2">
+                        <i class="fa-solid fa-circle-chevron-left"> 장바구니로 돌아가기</i>
+                    </div>
+                </section>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="product_detail.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>Document</title>
+    <script src="../common/headerFooter.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="../common/headerFooter.css" />
+</head>
+
+<body>
+    <div id="background">
+
+        <div class="product_detail_box">
+                <div class="nameInp">
+                    <h2 id="name"> </h1>                    
+                </div>
+            <div class="product-info">
+                <div class="imgInp" style="float: left"><img id="productImage" src="" style="height: 250px;" ></div>
+                <span>
+                    <br>
+                </span>
+                <span>
+                    <p class="subtext">가격</p> <h5 id="price"> </h5>
+                    <br>
+                    <p class="subtext">제조사</p> <h5 id="company"> </h5>
+                    <br>
+                    <p class="subtext">상세 설명</p> <h5 id="description"> </h5>
+                </span>
+                <br>
+            </div>
+            <hr>
+            
+        </span>
+        <div class="button_wrap">
+            <button type="button" class="button is-primary" id="button_purchase">바로 구매</button>
+            <button type="button"  class="button is-info" id="button_cart">장바구니</button>
+        </div>
+    </div>
+
+    <script src="./product_detail.js" type="module" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="../common/css/common.css" />
+  <link rel="stylesheet" type="text/css" href="../common/headerFooter.css" />
+  <script src="../common/headerFooter.js" defer></script>
+  <link rel="stylesheet" href="./register.css">
+  <title>회원가입</title>
+</head>
+</head>
+
+<body>
+  <div class="register_box">
+    <div class="">
+      <div class="" id='box'>
+        <p class="register_title">회원가입</p>
+        <div class="">
+          <div class="input_info">
+            <label for="name">이름</label>
+            <input type="name" placeholder="name" class="input is-info" id="name">
+          </div>
+          <div class="input_info">
+            <label for="mobile">휴대폰</label>
+            <input type="number" placeholder="mobile(숫자만 입력해주세요)" class="input is-info" id="mobile" >
+          </div>
+          <div class="input_info">
+            <label for="phone">전화</label>
+            <input type="number" placeholder="phone(숫자만 입력해주세요)" class="input is-info" id="phone">
+          </div>
+        </div>
+        
+        <div class="field">
+          <div class="input_info">
+            <label for="zipcode">우편번호</label>
+            <input type="number" minlength ='5' maxlength="5" placeholder="zip" class="input is-info" id="zipcode">
+          </div>
+          <div class="input_info">
+            <label for="address">주소</label>
+            <input type="text" placeholder="address" class="input is-info" id="address">
+          </div>
+        </div>
+        
+        <div class="field">
+          <div class="input_info">
+            <label for="email">이메일</label>
+            <input type="email"  id="email" placeholder="email" class="input is-info">
+          </div>
+          <div class="input_info">
+            <label for="nickname">별명</label>
+            <input type="text"  id="nickname" placeholder="nickname" class="input is-info">
+          </div>
+          <div class="input_info">
+            <label for="password">비밀번호</label>
+            <input type="password" id="password1" placeholder="password" class="input is-info">
+          </div>
+          <div class="input_info">
+            <label for="password2">비밀번호확인</label>
+            <input type="password" id="password2" placeholder="password confirm" class="input is-info">
+          </div>
+        </div>
+        <div class="block is-right">
+        </div>
+<div class="button_wrap">
+  <div class="agree_wrap">
+    <button type="button" style="display: inline" class="button is-info" id="terms">약관</button>
+    <div id="agree" style="display: none" >
+      <ul>
+        <li><label><input type="checkbox"  class="checkBox" id="info-ok"><a > 개인정보 수집동의</a></label></li>
+        <li><label><input type="checkbox" class="checkBox" id="third-ok"><a > 제 3자 제공 동의</a></label></li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <button class="button is-success" id="buttonId">
+      회원가입
+    </button>
+  </div>
+</div>
+  
+      </div>
+    </div>
+  </div>
+
+
+  <script src="./register.js" type="module" defer></script>
+</body>
+
+</html>

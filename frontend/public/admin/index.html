@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../common/css/common.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+		/>
+		<link rel="stylesheet" href="./style.css" />
+		<script type="module" src="../api/api.js"  defer></script>
+        <script type="module" src="../admin/main.js"  defer></script>
+		<script src="../common/headerFooter.js" defer></script>
+		<link rel="stylesheet" href="../common/css/common.css">
+		<link rel="stylesheet" href="../common/headerFooter.css">
+
+		<title>Admin</title>
+	</head>
+	<body>
+		<!-- main Start -->
+		<main id="main">
+			<!-- sidemenu Start -->
+			<section class="sidemenu">
+				<div class="sidemenu_content">
+					<h2>관리자</h2>
+					<p id="category_manage">카테고리 관리</p>
+					<p id="product_maange">상품관리</p>
+                    <p id="order_mange" style="display: none;">주문관리</p>
+				</div>
+			</section>
+			<!-- sidemenu END -->
+			<!-- category_list Start -->
+			<section class="category_list  " id="category_section">
+				<div class="category_list_header">전체 카테고리 목록</div>
+				<div class="category_list_wraper">
+					<div class="category_list_body">
+						<div class="contegory_list_content" id="category_content">
+							<div class="category_list_content_wrapper">
+
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="category_add">
+					<div class="category_add_header">카테고리 추가하기</div>
+					<div class="category_add_body">
+						<div>
+							<input
+								class="input is-info"
+								id="category_input"
+								type="text"
+								placeholder="카테고리 추가"
+							/>
+							<button class="button is-success " id="category_add_btn">추가</button>
+						</div>
+					</div>
+				</div>
+				<div class="category_modi">
+					<div class="category_add_header">카테고리 수정하기</div>
+					<div class="modi_input">
+						<label for="modi_input_id" class="modi_label"> 수정할 카테고리 ID</label>
+						<input
+							class="input is-info"
+							id="modi_input_id"
+							type="text"
+							placeholder="수정할 카테고리 ID"
+						/>
+					</div>
+					<div class="modi_input">
+						<label for="modi_input_name" class="modi_label"> 수정할 카테고리명</label>
+						<input
+							class="input is-info"
+							id="modi_input_name"
+							type="text"
+							placeholder="수정할 카테고리명"
+						/>
+					</div>
+					<div>
+						<button class="button is-primary" id="modi_btn">카테고리명 수정</button>
+					</div>
+				</div>
+				</div> 
+			</section>
+			<!-- category_list END -->
+			<!-- product_manage Start -->
+			<section class="product_manage dp_none  " id="product_section">
+				<div class="product_list_header">카테고리 상품 목록</div>
+				<div class="product_list_header_category">
+				</div>
+				<!-- <div>
+					<input type="text" class="input is-info" id='product_search_input'placeholder="조회하려는 카테고리ID를 입력하세요">
+					<button class="button is-primary" id="product_search_btn">검색</button>
+				</div> -->
+				<div class="product_list_wraper">
+					<div class="product_list_body">
+						<div class="product_list_content" id="product_list">
+							<div class="product_detail">
+							</div>
+						</div>
+					</div>
+<input class="input is-primary" type="text" placeholder="선택상품 id" id="delete_short_id">					<button class="delete_btn button is-success" id="select_product_delte_btn">
+						선택 상품 삭제하기
+					</button>
+				</div>
+				<div class="add_product">
+					<div class="add_product_title">상품 추가하기</div>
+					<div  id="product_form">
+						<div class="field is-horizontal">
+							<div class="field-label is-normal">
+								<label class="label">카테고리</label>
+							</div>
+							<div class="field-body">
+								<div class="field">
+									<p class="control">
+										<div class="select is-primary">
+											<select id="category_select">
+											  <option>카테고리</option>
+											</select>
+										  </div>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="field is-horizontal">
+							<div class="field-label is-normal">
+								<label class="label" for="form_add_name">상품명</label>
+							</div>
+							<div class="field-body">
+								<div class="field">
+									<p class="control">
+										<input
+											class="input"
+											type="text"
+											placeholder="상품명"
+											id="form_add_name"
+										/>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="field is-horizontal">
+							<div class="field-label is-normal">
+								<label class="label" for="form_add_img">상품 이미지</label>
+							</div>
+							<div class="field-body">
+								<div class="field">
+									<p class="control">
+										<input
+											class="input"
+											type="file"
+											placeholder="상품이미지"
+											id="form_add_img"
+										/>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="field is-horizontal">
+							<div class="field-label is-normal">
+								<label class="label" for="form_add_thumbnail">상품 썸네일</label>
+							</div>
+							<div class="field-body">
+								<div class="field">
+									<p class="control">
+										<input
+											class="input"
+											type="file"
+											placeholder="상품썸네일"
+											id="form_add_thumbnail"
+										/>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="field is-horizontal">
+							<div class="field-label is-normal">
+								<label class="label" for="form_add_price">상품가격</label>
+							</div>
+							<div class="field-body">
+								<div class="field">
+									<p class="control">
+										<input
+											class="input"
+											type="text"
+											placeholder="상품가격"
+											id="form_add_price"
+										/>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="field is-horizontal">
+							<div class="field-label is-normal">
+								<label class="label" for="form_add_company">제조사</label>
+							</div>
+							<div class="field-body">
+								<div class="field">
+									<p class="control">
+										<input
+											class="input"
+											type="text"
+											placeholder="제조사"
+											id="form_add_company"
+										/>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="field is-horizontal">
+							<div class="field-label is-normal">
+								<label class="label" for="form_add_description">상품설명</label>
+							</div>
+							<div class="field-body">
+								<div class="field">
+									<p class="control">
+										<input
+											class="input"
+											type="text"
+											placeholder="상품설명"
+											id="form_add_description"
+										/>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="product_add_btn_wrapper">
+							<button class="button product_add_btn is-primary" id ='product_form_btn'>상품추가</button>
+						</div>
+					</div>
+				</div>
+				 <!-- <div class="modi_product">
+					<div class="add_product_title">상품 수정하기</div>
+					<div  id="product_modi_form">
+						<div class="field is-horizontal">
+							<div class="field-label is-normal">
+								<label class="label">카테고리</label>
+							</div>
+							<div class="field-body">
+								<div class="field">
+									<p class="control">
+										<div class="select is-primary">
+											<select id="category_modi_select">
+											  <option>카테고리</option>
+											</select>
+										  </div>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="field is-horizontal">
+							<div class="field-label is-normal">
+								<label class="label" for="form_modi_name">상품명</label>
+							</div>
+							<div class="field-body">
+								<div class="field">
+									<p class="control">
+										<input
+											class="input"
+											type="text"
+											placeholder="상품명"
+											id="form_modi_name"
+										/>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="field is-horizontal">
+							<div class="field-label is-normal">
+								<label class="label" for="form_modi_img">상품 이미지</label>
+							</div>
+							<div class="field-body">
+								<div class="field">
+									<p class="control">
+										<input
+											class="input"
+											type="file"
+											placeholder="상품이미지"
+											id="form_modi_img"
+										/>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="field is-horizontal">
+							<div class="field-label is-normal">
+								<label class="label" for="form_modi_thumbnail">상품 썸네일</label>
+							</div>
+							<div class="field-body">
+								<div class="field">
+									<p class="control">
+										<input
+											class="input"
+											type="file"
+											placeholder="상품썸네일"
+											id="form_modi_thumbnail"
+										/>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="field is-horizontal">
+							<div class="field-label is-normal">
+								<label class="label" for="form_modi_price">상품가격</label>
+							</div>
+							<div class="field-body">
+								<div class="field">
+									<p class="control">
+										<input
+											class="input"
+											type="text"
+											placeholder="상품가격"
+											id="form_modi_price"
+										/>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="field is-horizontal">
+							<div class="field-label is-normal">
+								<label class="label" for="form_modi_company">제조사</label>
+							</div>
+							<div class="field-body">
+								<div class="field">
+									<p class="control">
+										<input
+											class="input"
+											type="text"
+											placeholder="제조사"
+											id="form_modi_company"
+										/>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="field is-horizontal">
+							<div class="field-label is-normal">
+								<label class="label" for="form_modi_description">상품설명</label>
+							</div>
+							<div class="field-body">
+								<div class="field">
+									<p class="control">
+										<input
+											class="input"
+											type="text"
+											placeholder="상품설명"
+											id="form_modi_description"
+										/>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="field is-horizontal">
+							<div class="field-label is-normal">
+								<label class="label" for="form_modi_shortid">상품ID</label>
+							</div>
+							<div class="field-body">
+								<div class="field">
+									<p class="control">
+										<input
+											class="input"
+											type="text"
+											placeholder="상품설명"
+											id="form_modi_shortid"
+										/>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="product_add_btn_wrapper">
+							<button class="button product_add_btn is-primary" id ='product_modi_form_btn'>상품수정</button>
+						</div>
+					</div>
+				</div>  -->
+			</section>
+			<!-- product_manage END -->
+		<!-- product_manage Start -->
+		<!-- <section class="deliver_manage dp_none" id="deliver_section">
+			<div class="category_list_header">주문현황</div>
+			<div class="category_list_wraper">
+				<div class="category_list_body">
+					<div class="order_list_content">
+						<div class="order_list">
+							<table class="order_table">
+								<thead>
+									<tr>
+										<td>주문자</td>
+										<td>상품명</td>
+										<td>수량</td>
+										<td>배송지</td>
+										<td>주문현황</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>임종승</td>
+										<td>나이키 에어조던</td>
+										<td>1</td>
+										<td>서울시 노원구 어딘가</td>
+										<td>
+											<div class="select is-primary delivery_select">
+												<select>
+												  <option>배송대기</option>
+												  <option>배송중</option>
+												  <option>배송완료</option>
+												</select>
+											  </div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							
+						</div>
+					</div>
+				</div>
+				<div class="modify_btn_wrapper">
+					<button class="modify_btn button is-success">
+						배송상태 수정하기
+					</button>
+				</div>
+			</div>
+		</section> -->
+		<!-- product_manage END -->
+		</main>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+.makecenter {
+    text-align: center;
+}
+
+a {
+    font-size: 13px;
+    margin: 0 0 10px 0;
+}
+
+#buttonId {
+    width: 100%;
+}
+.box{
+    height: 400px !important;
+}
+#box {
+    margin-top: 10%;
+}
+#password{
+    margin-bottom: 80px !important;
+}
+.imagee {
+    margin: 0 10px 0 40px;
+}
+.hero-body{
+    height: 81vh;
+}
+.block.is-right{
+    margin-bottom: 26px !important;
+}
+.login_title{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}

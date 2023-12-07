@@ -1,0 +1,67 @@
+/* reset.css */
+*{
+    box-sizing: border-box;
+}
+html,body,h1,h2,h3,h4,h5{
+    margin: 0;
+    padding: 0;
+}
+ol,ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* 
+==================================================================================================================
+
+공통 레이아웃 부분 css 입니다.
+
+================================================================================================================
+*/
+
+#header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;;
+}
+#header .header_left{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+}
+#header .header_left li:nth-child(1) a{
+    font-size: 50px;
+    color: white;
+}
+#header .header_right{
+    color: white;
+    align-items: center;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+#header .header_right li a{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+#header .header_right i{
+    font-size: 50px;
+    color: white;
+    padding-right:20px;
+}
+/* footer Start */
+#footer{
+    padding:50px 50px 20px;
+    background-color: #111111;
+}
+#footer .footer_container{
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #7B7B7B;
+}

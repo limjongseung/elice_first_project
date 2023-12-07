@@ -1,0 +1,46 @@
+.makecenter {
+    text-align: center;
+}
+
+a {
+    font-size: 13px;
+    margin: 0 0 10px 0;
+}
+
+#buttonId {
+    width: 275px;
+    height: 35px;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    font-size: 17px;
+    font-weight: 900;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+#box {
+    margin-top: 10%;
+}
+
+.imagee {
+    margin: 0 10px 0 40px;
+}
+
+.container{
+    height: 100%;
+}
+.login_box{
+    height: 500px;
+}
+
+.second_box{
+    margin-bottom: 30px !important;
+}
+
+h2{
+    margin-bottom: 10px;
+}

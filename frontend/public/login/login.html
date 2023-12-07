@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudfare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="login.css">
+  <title>로그인</title>
+  <script src="./login.js" type="module" defer></script>
+  <script src="../common/headerFooter.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="../common/headerFooter.css" />
+</head>
+
+<body>
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div  class="box" id="box">
+          <p class="login_title">Login</p>
+          <div class="field">
+            <div class="makecenter">
+              <input type="text" placeholder="email" class="input" id="email">
+            </div>
+          </div>
+          <div class="field">
+            <div>
+              <input type="password" placeholder="password" class="input" id="password">
+            </div>
+          </div>
+          <div class="block is-right">
+            <img src="./icon/person.png" ; width="20px" class="imagee">
+            <a href="../register/register.html">회원가입</a>
+            <!-- <img src="./icon/psword.png" ; width="20px" class="imagee">
+            <a href=""> 비밀번호 찾기</a> -->
+          </div>
+
+          <div class="columns is-centered">
+            <button id="buttonId" class="button is-dark">
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</body>
+
+</html>

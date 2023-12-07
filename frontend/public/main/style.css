@@ -1,0 +1,142 @@
+body {
+	position: relative;
+    overflow-x: hidden;
+}
+#header {
+	position: absolute;
+	padding: 20px;
+	width: 98%;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#header .header_left {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 200px;
+}
+#header .header_left li:nth-child(1) a {
+	font-size: 50px;
+	color: white;
+}
+#header .header_right {
+	color: white;
+	/* width: 20%; */
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	font-size: 20px;
+}
+<<<<<<< Updated upstream
+#header .header_right li a {
+	display: flex;
+	align-items: center;
+	color: white;
+=======
+#header .header_right li a, li{
+    display: flex;
+    align-items: center;
+    color: white;
+>>>>>>> Stashed changes
+}
+#header .header_right i {
+	font-size: 50px;
+	color: white;
+	padding-right: 20px;
+}
+/* header END */
+/* main_section Start */
+.main_section {
+	width: 100%;
+	height: 900px;
+	background: url(../img/main_bg.jpg) center center no-repeat;
+	background-size: cover;
+}
+.main_section_img_wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+.main_section_img_wrap img {
+	opacity: 0.8;
+}
+.product img {
+	width: 100%;
+}
+.product{
+    margin:40px 0;
+}
+/* main_section END */
+.content_section {
+	max-width: 1200px;
+	margin: 20px auto 20px;
+}
+.content_section_header {
+	margin-bottom: 20px;
+}
+.content_section_header .category {
+	display: flex;
+	justify-content: space-around;
+	/* width: 400px; */
+	margin-bottom: 60px;
+}
+.content_section_header .category div {
+	padding: 10px 20px;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 0 10px;
+	color: black;
+	cursor: pointer;
+	border: 3px solid darkgray;
+	border-radius: 9px;
+    transition: all 0.3s;
+}
+.content_section_header .category div:hover{
+    transform: scale(1.2);
+}
+.content_shoes_detail img{
+    width: 300px;
+    height: 450px;
+}
+.content_section_body {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.content_section_body .content_shoes {
+	text-align: center;
+	width: 320px;
+}
+#logout_btn {
+	color: white;
+	margin: 0 20px;
+	line-height: 50px;
+	align-items: center;
+}
+
+.slick-prev.slick-arrow,
+.slick-next.slick-arrow {
+	display: none !important;
+}
+.slick-list {
+	width: 1260px !important;
+	margin: 0 auto !important;
+}
+.section2 {
+	margin: 40px 0;
+}
+
+.hidden {
+	display: none !important;
+}
+.category_list_item{
+	transition: all 0.3s;
+}
+.focus{
+	color: white !important;
+	background-color: darkgrey;
+}

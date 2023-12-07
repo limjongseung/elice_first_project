@@ -1,0 +1,42 @@
+.makecenter {
+    text-align: center;
+}
+
+a {
+    font-size: 13px;
+    margin: 0 0 10px 0;
+}
+
+.button {
+    width: 275px;
+    height: 35px;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    font-size: 17px;
+    font-weight: 900;
+}
+
+body {
+    background-color: beige;
+}
+
+#box {
+    margin-top: 5%;
+}
+
+.imagee {
+    margin: 0 10px 0 40px;
+}
+
+.input_info {
+    margin-top: 5px;
+}
+
+#agree {
+    display: none;
+    margin: 5px 0 5px 0;
+}
+#terms{
+    cursor: pointer;
+}

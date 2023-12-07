@@ -1,0 +1,45 @@
+#name{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.background {
+    position: relative;
+}
+.logo{
+    margin: 20px;
+}
+.content {
+    margin: 0 auto;
+    position: absolute;
+    top: 20%;
+}
+.imgInp{
+    margin: 20px 50px 20px 20px;
+}
+
+.class {
+    display: flex;
+    justify-content: center;
+}
+.subtext{
+    font-size: 19px;
+    font-weight: 700;
+    
+}
+
+#background{
+    height: 81vh;
+    padding:200px 150px;
+}
+.button_wrap button{
+    width: 200px;
+    height: 30px;
+    color: white;
+    font-weight: bold;
+}
+.button_wrap{
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <script src="product-add.js" type="module" defer></script>
+    <style>
+        #submitButton{
+            background-color: black;
+            border-radius: 5px;
+            color: white;
+            font-size: 17px;
+            font-weight: 900;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar-brand">
+        <a href="/"><img src=".img/icon/brand_nike_icon_157863.png" ; width="100px"></a>
+    </div>
+
+    <div class="container">
+        <h1 class="subtitle is-4">제품추가</h1>
+        <div class="register-product-form-container">
+            <form class="box register-product-form-box" >
+                <div class="field">
+                    <label class="label" >제품명</label>
+                    <div class="control">
+                        <input class="input" id="name" type="text" placeholder="제품명" />
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">가격</label>
+                    <div class="field">
+                        <div class="control has-icons-right">
+                            <input class="input" id="price" type="number" placeholder="10000" />
+                            <span class="icon is-small is-right"> 원 </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">제조사</label>
+                    <div class="control">
+                        <input class="input" id="company" type="text" placeholder="nike"/>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label"">카테고리 shortId</label>
+                    <div class="control">
+                        <div class="select is-fullwidth">
+                            <select id="category">
+                                <option value="">카테고리</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">설명</label>
+                    <div class="control">
+                        <textarea class="textarea" id="description" placeholder="제품설명"></textarea>
+                    </div>
+                </div>
+
+                <div class="field is-fullwidth">
+                    <label class="label">제품 사진</label>
+                    <div class="file has-name is-fullwidth">
+                        <label class="file-label">
+                            <input class="file-input" id="imageInput" type="file"
+                                accept=".png, .jpeg, .jpg" />
+                            <span class="file-cta">
+                                <span class="file-icon">
+                                    <i class="fas fa-upload"></i>
+                                </span>
+                                <span class="file-label"> 사진 업로드 </span>
+                            </span>
+                            <span class="file-name" id="fileNameSpan">
+                                사진파일 (png, jpg, jpeg)
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <button class="button is-fullwidth" id="submitButton">
+                        올리기
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

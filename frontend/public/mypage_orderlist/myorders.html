@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./myorders.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script type="module" src="./myorders.js" defer></script>
+
+    <!-- header/footer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <script src="../common/headerFooter.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="../common/headerFooter.css" />
+
+    <title>Document</title>
+</head>
+
+<body>
+    <header></header>
+    <br>
+    <br>
+
+    <div class="wrapper">
+        <div class="columns is-centered column_container">
+            <!-- 사이드 메뉴 -->
+            <div class="column side_menu is-one-fifth-desktop">
+                <!-- <aside class="menu">
+                    <h1 class="title is-4 has-text-grey-darker has-text-underlined">마이페이지</h1>
+                    <ul class="menu-list">
+                        <li>
+                            <a class="myProfile has-text-grey"
+                                onmouseover="this.classList.add('has-background-info-light')"
+                                onmouseout="this.classList.remove('has-background-info-light')">
+                                <span class="icon">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                                회원정보
+                            </a>
+                        </li>
+                        <li>
+                            <a class="deleteAccount has-text-grey"
+                                onmouseover="this.classList.add('has-background-info-light')"
+                                onmouseout="this.classList.remove('has-background-info-light')">
+                                <span class="icon">
+                                    <i class="fas fa-user-slash"></i>
+                                </span>
+                                회원탈퇴
+                            </a>
+                        </li>
+                        <li>
+                            <a class="myOrders has-text-grey"
+                                onmouseover="this.classList.add('has-background-info-light')"
+                                onmouseout="this.classList.remove('has-background-info-light')">
+                                <span class="icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </span>
+                                주문정보
+                            </a>
+                        </li>
+
+                    </ul>
+                </aside> -->
+            </div>
+
+
+            <!-- 주문목록 -->
+            <div class="order_wrap column">
+                <div class="my_page_title">
+                    <h4 class="is-size-4">주문정보</h4>
+                </div>
+                <div class="subcontent_title">
+                    <h4 class="is-size-6 mt-6">주문/배송 조회</h4>
+                </div>
+                <div class="table_container">
+                    <table class="order_table table is-fullwidth custom-table">
+                        <thead>
+                            <tr>
+                                <th>주문일</th>
+                                <th style="width: 35%;">주문정보</th>
+                                <th>결제금액</th>
+                                <th>진행상태</th>
+                                <th>주문변경</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- <tr>
+                                <td class="orderId">${orderId}</td>
+                                <td class="product_detail">
+                                    <p class="product_name">${productNames}</p>
+                                </td>
+                                <td class="total_amount">${totalAmount}</td>
+                                <td class="shipping_status">${text}</td>
+                                <td class="btn">
+                                    <button data-id-modify="${orderId}"
+                                        class="button is-primary is-focused is-small modify_order is-focused" ${
+                                        disabled ? "disabled" : "" }>주문수정</button>
+                                    <button data-id-cancel="${orderId}"
+                                        class="button is-danger is-focused is-small cancel_order is-focused" ${ disabled
+                                        ? "disabled" : "" }>주문취소</button>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+
+                    <div class="container">
+                        <div class="is-centered is-vcentered">
+                            <div class="page-list">
+                                <i class="fa-solid fa-angle-left" id="prevPageButton"></i>
+                                <div id="pagination-numbers"></div>
+                                <i class="fa-solid fa-angle-right" id="nextPageButton"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 주문수정 모달 -->
+    <div id="modal orderModifyModal" class="modal ">
+        <div class="modal-background" id="modalBackground"></div>
+        <div class="modal-content is-flex is-justify-content-center">
+            <div class="box ">
+                <div>
+                    <h1 class="title is-4">주문정보</h1>
+                </div>
+                <form class="box mt-5" id="orderForm">
+                    <div class="field">
+                        <div class="columns is-vcentered">
+                            <div class="column is-one-fifth">
+                                <label class="label is-size-7 ">이메일</label>
+                            </div>
+                            <div class="column">
+                                <input class="input is-small" type="text" name="email" disabled>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="columns is-vcentered">
+                            <div class="column is-one-fifth">
+                                <label class="label is-size-7">이름</label>
+                            </div>
+                            <div class="column">
+                                <div class="control">
+                                    <input class="input is-small" type="text" name="username" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="columns is-vcentered">
+                            <div class="column is-one-fifth">
+                                <label class="label is-size-7">연락처</label>
+                            </div>
+                            <div class="column">
+                                <div class="control">
+                                    <input class="input is-small" type="text" name="phone">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field" id="address">
+                        <div class="columns">
+                            <div class="column is-one-fifth">
+                                <label class="label is-size-7 pt-2">주소</label>
+                            </div>
+                            <div class="column">
+                                <!-- <div class="control">
+                                    <input class="input is-small" type="text" name="zipcode" id="zipcode_text"
+                                        placeholder="우편번호">
+                                </div> -->
+                                <div class="control">
+                                    <input class="input is-small" type="text" name="address">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label pt-6 pb-2 is-size-6">주문한 상품</label>
+                        <div class="field is-horizontal">
+                            <div class="field-label is-size-7 mt-1 is-narrow"> 주문번호: </div>
+                            <div class="field-body is-one-fifth"> <input class="input is-small" type="text"
+                                    name="orderId" disabled></div>
+                        </div>
+
+                        <div class="control">
+
+                            <!-- 주문한 상품 리스트 -->
+                            <table class="table is-fullwidth modal_order_table">
+                                <thead>
+                                    <tr>
+                                        <th class="has-text-centered is-7 custom-text" style="width: 60%">상품명</th>
+                                        <th colspan="2" class="has-text-centered custom-text">구매수량</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="order_detail_modal">
+                                    <!-- <tr>
+                                        <td class="is-3 has-text-centered custom-text">Product 1</td>
+                                        <td><input class="input is-small is-narrow" type="text" name="quantity" value=""></td>
+                                        <td class="has-text-left custom-text pl-0">개</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="is-3 has-text-centered custom-text">Product 2</td>
+                                        <td class="has-text-right custom-text">7</td>
+                                        <td class="has-text-left custom-text pl-0">개</td>
+                                    </tr>
+                                
+                                <tr>
+                <td class="product-id is-3 has-text-centered custom-text" style="vertical-align: middle;">${name}</td>
+                <td><input class="input is-small" type="number" name="quantity" value="${quantity}" style="height: 20px;"></td>
+                <td class="has-text-left custom-text pl-0" style="vertical-align: middle;">개</td>
+            </tr>
+                                -->
+                                </tbody>
+                            </table>
+
+                            <!-- 총 결제금액 -->
+                            <div class="field is-horizontal mt-4">
+                                <div class="field ">
+                                    <p class="control">
+                                        <span class="pr-4 custom-text">총 결제금액: </span>
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control ">
+                                        <span class="totalAmount custom-text">0</span>
+                                    </p>
+                                </div>
+                                <div class="field "></div>
+                                <p class="control">
+                                    <span class="custom-text pl-1"> 원</span>
+                                </p>
+                            </div>
+
+                            <div class="field">
+                                <div class="field buttons is-centered">
+                                    <button class="button confirmBtn mt-5 is-primary is-light is-expanded"
+                                        id="orderChangeSubmit">수정</button>
+                                    <div class="control">
+                                        <button type="button" class="button cancelBtn mt-5 is-danger is-light"
+                                            id="orderChangeCancel">취소</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <button class="modal-close is-large" id="modalCloseButton" aria-label="close"></button>
+    </div>
+    </div>
+
+</body>
+
+</html>

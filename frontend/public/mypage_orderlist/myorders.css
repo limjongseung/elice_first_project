@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0px auto 300px auto;
+}
+
+.column_container {
+    width: 90%;
+}
+
+/* 사이드 메뉴 */
+.side_menu {
+    flex: 0 0 auto;
+    min-width: 150px;
+    max-width: 250px;
+}
+
+.column.side_menu h1 {
+    padding: 20px 5px;
+    border-bottom: 1px solid rgb(219, 215, 215);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 주문내역 */
+.my_page_title {
+    padding: 10px 5px;
+    border-bottom: solid black;
+}
+
+.table_container {
+    padding: 20px 0px;
+    width: 100%;
+}
+
+.order_table.table {
+    border-collapse: collapse;
+    width: 100%;
+    border-bottom: 1px solid rgb(147, 136, 136);
+}
+
+.custom-table tbody tr:hover td,
+.custom-table tbody tr:hover th {
+    background-color: rgb(251, 239, 239);
+}
+
+.order_table th,
+.order_table td {
+    border: none;
+    padding: 2px;
+}
+
+.order_table.table thead tr th {
+    height: 68px;
+    font-size: 14px;
+    padding: 0px 14px;
+    background-color: #fbfafa;
+    border-bottom: 2px solid rgb(147, 136, 136);
+    border-top: 2px solid rgb(147, 136, 136);
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.order_table.table tbody tr td {
+    padding: 20px 0px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+}
+
+.order_table tbody tr:hover {
+    background-color: #e0e0e0;
+}
+
+.order_table button {
+    padding: 5px 10px;
+}
+
+form.box {
+    width: 500px;
+}
+
+form.box .column {
+    padding-bottom: 0;
+}
+
+#modal .modal-content .box {
+    padding: 50px;
+}
+
+.field.is-horizontal {
+    justify-content: flex-end;
+}
+
+.custom-text {
+    font-size: 12px;
+}
+
+/* pagination */
+.page-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: normal;
+}
+
+.page-list i {
+    padding-top: 3px;
+}
+
+.page-list div a{
+    padding: 0px 5px
+}

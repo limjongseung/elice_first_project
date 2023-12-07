@@ -1,0 +1,185 @@
+#header {
+  width: 100%;
+  background-color: antiquewhite;
+}
+#header ul {
+  display: flex;
+  justify-content: flex-end;
+}
+#header ul li {
+  margin: 20px;
+}
+/* header END */
+
+#main {
+  display: flex;
+  width: 100%;
+  margin: 50px;
+  min-height: 73vh;
+}
+.sidemenu_content {
+  width: 200px;
+}
+#main .sidemenu_content h2 {
+  font-size: 30px;
+  font-size: bold;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+#main .sidemenu_content p {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+#main .category_list,
+.product_manage,
+.deliver_manage {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  /* margin-left: 13px; */
+}
+.category_list_header,
+.product_list_header {
+  font-size: 25px;
+  margin-bottom: 27px;
+}
+.category_list_content_checkbox{
+
+  width: 400px;
+}
+.dp_flex{
+  display: flex;
+}
+.contegory_list_content .product_list_content {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.contegory_list_content > li {
+  padding-bottom: 10px;
+}
+.delete_btn {
+  margin: 20px;
+}
+.category_add {
+  text-align: left;
+  margin-bottom: 30px;
+}
+.category_add_header {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.category_add_body > div {
+  display: flex;
+}
+.category_add_body > div button {
+  margin-left: 20px;
+}
+.category_modi {
+  margin-bottom: 20px;
+}
+.category_list_content_checkbox {
+  font-size: 20px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.modi_input {
+  margin-bottom: 10px;
+}
+.modi_label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.add_product_title {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.field.is-horizontal {
+  justify-content: flex-end;
+}
+.field-label {
+  min-width: 100px;
+  text-align: center;
+  flex-grow: 0;
+}
+.select.is-primary {
+  width: 100%;
+}
+.select.is-primary select {
+  width: 100%;
+}
+.product_add_btn_wrapper {
+  text-align: center;
+}
+/* 
+========================================================================================
+상품 목록 css 레이아웃
+========================================================================================
+*/
+.product_list_content {
+  display: flex;
+  /* justify-content: flex-start; */
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.product_detail {
+  /* width: 250px; */
+  /* height: 320px; */
+}
+.product_detail p{
+	text-align: center;
+	margin-bottom:10px;
+}
+.product_name {
+  width: 300px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.category_list_wraper,
+.product_list_wraper {
+  margin-bottom: 30px;
+}
+.product_list_category_list{
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.order_list table {
+  width: 100%;
+  text-align: center;
+}
+.order_list_content {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
+.order_list table thead tr {
+  font-weight: bold;
+}
+.delivery_select select {
+  text-align: center;
+}
+.order_list table tr {
+  height: 40px;
+  line-height: 40px;
+}
+.order_list table tbody tr {
+  border-top: 1px solid black;
+}
+.modify_btn_wrapper {
+  text-align: center;
+}
+/* display none 해주는 클래스 */
+.dp_none {
+  display: none;
+}
+.product_img_wrap img{
+  width: 300px;
+  height: 450px;
+}

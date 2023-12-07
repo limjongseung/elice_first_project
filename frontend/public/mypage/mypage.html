@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./mypage.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="./mypage.js" type="module" defer></script>
+
+    <!-- header/footer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <script src="../common/headerFooter.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="../common/headerFooter.css" />
+
+    <title>Document</title>
+
+</head>
+
+<body>
+    <!-- header -->
+    <br>
+    <br>
+
+    <div class="wrapper">
+        <div class="columns is-centered column_container">
+            <!-- 사이드 메뉴 -->
+            <div class="column side_menu is-one-fifth-desktop">
+                <!-- <aside class="menu">
+                    <h1 class="title is-4 has-text-grey-darker has-text-underlined">마이페이지</h1>
+                    <ul class="menu-list">
+                        <li>
+                            <a class="myProfile has-text-grey"
+                                onmouseover="this.classList.add('has-background-info-light')"
+                                onmouseout="this.classList.remove('has-background-info-light')">
+                                <span class="icon">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                                회원정보
+                            </a>
+                        </li>
+                        <li>
+                            <a class="deleteAccount has-text-grey"
+                                onmouseover="this.classList.add('has-background-info-light')"
+                                onmouseout="this.classList.remove('has-background-info-light')">
+                                <span class="icon">
+                                    <i class="fas fa-user-slash"></i>
+                                </span>
+                                회원탈퇴
+                            </a>
+                        </li>
+                        <li>
+                            <a class="myOrders has-text-grey"
+                                onmouseover="this.classList.add('has-background-info-light')"
+                                onmouseout="this.classList.remove('has-background-info-light')">
+                                <span class="icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </span>
+                                주문정보
+                            </a>
+                        </li>
+                    </ul>
+                </aside> -->
+            </div>
+
+            <!-- 회원정보 -->
+            <div class="column main">
+                <div class="my_page_title">
+                    <h4 class="is-size-4">회원정보</h4>
+                </div>
+                <div class="form_container">
+                    <div class="box custom-box">
+                        <form class="user_info field" id="FORMID">
+
+                            <div class="field">
+                                <label for="name" class="label">이름</label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="text" id="name" name="name" value="" required disabled>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label for="name" class="label">닉네임</label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="text" id="nickname" name="nickname" value="" disabled>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label for="email" class="label">이메일</label>
+                                <div class="control has-icons-left">
+                                    <input class="input email" type="email" id="email" name="email" value="" readonly
+                                        disabled>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-envelope"></i>
+                                    </span>
+                                </div>
+                                <p id="emailHelpMessage" class="help is-primary" style="display: none;">이메일 주소는 변경할 수 없습니다.
+                                </p>
+                            </div>
+
+                            <div class="field">
+                                <label for="mobile" class="label">휴대폰 번호</label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="text" id="mobile" name="mobile" value="" required
+                                        disabled>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </span>
+                                </div>
+                                <p id="mobileHelpMessage" class="help is-primary" style="display: none;">번호 11자리를
+                                    입력해주세요.
+                                </p>
+                            </div>
+
+                            <div class="field">
+                                <label for="phone" class="label">전화번호</label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="text" id="phone" name="phone" value="" required disabled>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </span>
+                                </div>
+                                <p id="phoneHelpMessage" class="help is-primary" style="display: none;">번호 9~11자리를 입력해주세요.
+                                </p>
+                            </div>
+
+                            <div class="field">
+                                <label for="zipcode" class="label">우편번호</label>
+                                <div class="control">
+                                    <input class="input" type="number" id="zipcode" name="zipcode" value="" disabled>
+                                </div>
+                                <p id="zipcodeHelpMessage" class="help is-primary" style="display: none;">번호 5자리를 입력해주세요.
+                                </p>
+                            </div>
+
+                            <div class="field">
+                                <label for="address" class="label">주소</label>
+                                <div class="control">
+                                    <input class="input" type="text" id="address" name="address" value="" required
+                                        disabled>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input is-hidden mt-3" type="password" id="password" name="password"
+                                        value="" placeholder="비밀번호를 입력해주세요" required>
+                                </div>
+                            </div>
+
+                        </form>
+                        <div class="buttons is-centered">
+                            <button class="button confirmBtn mt-5 is-primary is-light is-expanded is-hidden"
+                                type="submit" form="FORMID">확인</button>
+                            <button class="cancelBtn button mt-5 is-danger is-light is-hidden" type="button">취소</button>
+                            <button class="changeAccountInfo button changeInfoBtn mt-5 is-info is-light"
+                                type="button">회원정보 변경</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 계정삭제 모달 -->
+        <!-- <div id="modal" class="modal">
+            <div class="modal-background" id="modalBackground"></div>
+            <div class="modal-content">
+                <div class="box" id="box">
+                    정망 탈퇴하시겠습니다?
+                    <div class="buttons">
+                        <button class="button mt-5 is-danger is-light" id="confirmDeleteAccount" aria-label="close">
+                            네
+                        </button>
+                        <button class="button mt-5 is-primary is-light" id="cancelDelete" aria-label="close">
+                            아니오
+                        </button>
+                    </div>
+                </div>
+                <button class="modal-close is-large" id="modalCloseButton" aria-label="close"></button>
+            </div>
+        </div>
+    </div> -->
+
+
+        <!-- <div>
+        <button class="login">LOGIN</button>
+        <button class="signup">REG</button>
+    </div> -->
+
+
+</body>
+
+</html>

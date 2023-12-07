@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./cart.css">
+    <script src="./cart.js" type="module" defer></script>
+
+    <!-- header/footer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <script src="../common/headerFooter.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="../common/headerFooter.css" />
+
+    <title>Document</title>
+</head>
+
+
+<body>
+    <main>
+        <section class="container">
+            <div class="container_header is-flex">
+                <h3><span class="is-size-4 has-text-weight-bold">장바구니</span> > <span>주문결제</span> > <span>주문완료 </span>
+                </h3>
+            </div>
+
+            <div class="content_wrap">
+                <section class="cart_info">
+
+                    <p class="custom-text">장바구니에 등록하신 상품의 목록입니다.</p>
+                    <table class="cart_table table is-fullwidth">
+                        <thead id="table_head">
+                            <tr>
+                                <th class="custom-checkbox"><input type="checkbox"
+                                        class="masterCheckbox checkbox is-narrow"></th>
+                                <th colspan="2" style="width: 40%">상품정보</th>
+                                <th>수량</th>
+                                <th>가격</th>
+                                <th class="is-narrow">배송비</th>
+                                <th>상품금액</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table_body" class="table_body">
+                            <tr class="empty-cart-message hidden">
+                                <td colspan="7">장바구니에 담긴 상품이 없습니다.</td>
+                            </tr>
+
+                            <!-- <tr data-product-id="${id}">
+                                <td class="checkbox is-flex is-align-items-center"><input id="${id}" type="checkbox"
+                                        class="productCheckbox checkbox" checked></td>
+                                <td class="product_detail" id="product_detail">
+                                    <div class="image_container">
+                                    <img class="product_image"
+                                        src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80"
+                                        alt="상품이미지">
+                                    </div>
+                                </td>
+                                <td class="product_name">
+                                    <div class="is-flex is-align-items-center">
+                                        <p class="product_name">${name}</p>
+                                    </div>
+                                </td>
+                                <td class="product_count">
+                                    <i class="minusBtn fas fa-less-than"
+                                        onclick="import('./cart.js').then(module => module.minus(event, '${id}'))"></i>
+                                    <span id="${id}" class="product_count_value">${totalQuantity}</span>
+                                    <i class="plusBtn fas fa-greater-than"
+                                        onclick="import('./cart.js').then(module => module.plus(event, '${id}'))"></i>
+                                </td>
+                                <td class="price">${formatPrice(price)}</td>
+                                <td class="shipping_fee">0</td>
+                                <td class="price_sum">${formatPrice(priceSum)}</td>
+                            </tr> -->
+
+
+                        </tbody>
+                    </table>
+
+                    <button type="button" class="button delete_item_button is-small">선택상품삭제</button>
+                </section>
+
+                <section class="right_menu">
+                    <div class="order_receipt">
+                        <h2>결제정보</h2>
+                        <div class="receipt">
+                            <div>총 상품금액</div>
+                            <div class="product_amount"> 원</div>
+                        </div>
+                        <div class="receipt">
+                            <div>배송비</div>
+                            <div class="delivery_fee"> 0 원</div>
+                        </div>
+                        <div class="receipt">
+                            <div>총 할인금액</div>
+                            <div id="discount">0 원</div>
+                        </div>
+                        <div class="total_price">
+                            <div>총 결제금액</div>
+                            <div id="total_price"> 원</div>
+                        </div>
+                        <div class="order_button">
+                            <button class="order_button">선택상품 주문하기</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
+
+</body>
+
+</html>
