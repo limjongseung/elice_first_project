@@ -30,17 +30,15 @@ body {
 	align-items: center;
 	font-size: 20px;
 }
-<<<<<<< Updated upstream
 #header .header_right li a {
 	display: flex;
 	align-items: center;
 	color: white;
-=======
+}
 #header .header_right li a, li{
     display: flex;
     align-items: center;
     color: white;
->>>>>>> Stashed changes
 }
 #header .header_right i {
 	font-size: 50px;

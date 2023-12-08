@@ -25,6 +25,7 @@ const routeHandler = require('./modules/errorHandler/routeHandler.js')
  */
 app.use(cors());
 
+
 /**
  * JSON 파싱 설정
  * 요청의 본문을 JSON 형식으로 파싱하여 사용할 수 있도록 함
@@ -75,6 +76,9 @@ conn.MongoConnect();
  * 웹 서버 시작
  * 3000번 포트에서 웹 서버를 시작함
  */
+app.get('/', (req, res) => {
+  res.send('<html><head></head><body><h1>Hello from Node.js!</h1></body></html>');
+});
 app.listen(3000, () => {
   console.log("웹 서버가 포트 3000에서 운영중입니다.");
 });

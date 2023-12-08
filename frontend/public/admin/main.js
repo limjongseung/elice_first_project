@@ -9,8 +9,7 @@ import {
 // 	deleteAccount
 // } from '/shopping_project_4team/frontend/public/api/userapi.js'
 //url 설정
-//  http://kdt-sw-6-team04.elicecoding.com:3000/
-const url_local = "http://kdt-sw-6-team04.elicecoding.com:3000/";
+const url_local = "http://localhost:3000/";
 
 // html element 가져오기
 
@@ -275,55 +274,3 @@ selectProductDelteBtn.addEventListener("click", async () => {
 		console.log(error);
 	}
 });
-
-// // FormData 객체 생성
-// var formDataModi = new FormData();
-
-// // 이미지 파일 관련 요소 및 체크박스 가져오기
-// var imgInput = document.getElementById("form_add_img");
-// var thumbnailInput = document.getElementById("form_modi_thumbnail");
-// var thumbnailCheckbox = document.getElementById("form_modi_thumbnail_checkbox");
-
-// // 이미지 파일을 선택할 때 이벤트 처리
-// imgInput.addEventListener("change", function() {
-//     formDataModi.set("img", imgInput.files[0]);
-// });
-
-// // 썸네일 파일을 선택할 때 이벤트 처리 (체크박스의 선택 여부에 따라 파일을 추가 또는 제거)
-// thumbnailCheckbox.addEventListener("change", function() {
-//     if (thumbnailCheckbox.checked) {
-//         formDataModi.set("thumbnail", thumbnailInput.files[0]);
-//     } else {
-//         // 체크박스가 선택되지 않은 경우, FormData에서 해당 필드 제거
-//         formDataModi.delete("thumbnail");
-//     }
-// });
-
-// // 나머지 필드의 데이터 추가 (상품 ID, 이름, 가격, 회사, 설명 등)
-// formDataModi.set("productShortId", document.getElementById("form_modi_shortid").value);
-// formDataModi.set("name", document.getElementById("form_add_name").value);
-// formDataModi.set("price", document.getElementById("form_modi_price").value);
-// formDataModi.set("company", document.getElementById("form_modi_company").value);
-// formDataModi.set("description", document.getElementById("form_modi_description").value);
-
-// // 폼 데이터 전송 버튼 클릭 이벤트
-// document.getElementById("product_modi_form_btn").addEventListener("click", async () => {
-//     try {
-//         // API POST 요청 보내기
-//         const response = await fetch(`${url_local}product/${}`, {
-//             method: "POST",
-//             headers: {
-//                 authorization: `bearer ${localStorage.getItem("accessToken")}`
-//             },
-//             body: formDataModi
-//         });
-
-//         if (response.status === 200) {
-//             console.log('상품 수정 요청이 성공적으로 처리되었습니다.');
-//         } else {
-//             console.error('상품 수정 요청이 실패하였습니다. 응답 코드:', response.status);
-//         }
-//     } catch (error) {
-//         console.error(error);
-//     }
-// });

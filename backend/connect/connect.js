@@ -3,7 +3,7 @@ require('dotenv').config()
 // 몽고디비와 상호작용하기 위한 몽구스 라이브러리를 가져온다
 const mongoose = require('mongoose');
 // 몽고디비 URI를 구성한다. DB_PASSWORD는 .env 파일에서 가져온다
-const mongodbUri = `mongodb+srv://cenrmomo:${process.env.DB_PASSWORD}@momo.evd2l0o.mongodb.net/teamFshoppingMall`
+const mongodbUri = `mongodb+srv://jongseungim5348:${process.env.DB_PASSWORD}@firstpproject.omemijt.mongodb.net/?retryWrites=true&w=majority`
 
 // MongoConnect 함수를 내보낸다
 module.exports = { MongoConnect };

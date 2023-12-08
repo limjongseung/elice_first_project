@@ -33,7 +33,7 @@ async function login(e) {
 
 try {
   
-  const returnToken = await sendPostRequest(`http://kdt-sw-6-team04.elicecoding.com:3000/account/login`, data)
+  const returnToken = await sendPostRequest(`http://localhost:3000/account/login`, data)
   const { accessToken, refreshToken } = returnToken;
 
   localStorage.setItem('accessToken', accessToken);
@@ -48,26 +48,3 @@ try {
   }
 }
 
-//const url = '/account/login'
-//const formData = new FormData();
-//formData.append('email', email);
-//formData.append('password', password);
-
-//axios.post(url, JSON.stringify(formdata))
-//  .then((response) => {
-//    console.log(response);
-//  })
-//  .catch((error) => {
-//    console.log(error);
-//  });
-
-//function fetpost(url,data){
-//  fetch(url, {
-//    method: 'POST',
-//    headers: {'Content-type': 'application/json'},
-//    body: JSON.stringify(data)
-//    })
-//  .then((res)=>{
-//    return res.json()
-//  })
-//}

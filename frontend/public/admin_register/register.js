@@ -1,4 +1,4 @@
-import { sendPostRequest } from "/shopping_project_4team/frontend/public/api/api.js";
+import { sendPostRequest } from "../api/api.js";
 
 const nameInput = document.querySelector('#name')
 const phoneInput = document.querySelector('#phone')
@@ -19,7 +19,7 @@ const password = passwordInput.value;
 const password2 = password2Input.value;
 
 const button = document.getElementById('buttonId');
-const url = 'http://kdt-sw-6-team04.elicecoding.com:3000/'
+const url = "http://localhost:3000/";
 // 유효성 검사 함수
 function Validcheck() {
   if (!/^\d{3}-\d{3,4}-\d{4}$/.test(phone)) {

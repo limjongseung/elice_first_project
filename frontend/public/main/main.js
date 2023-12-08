@@ -6,7 +6,7 @@ import {
 import{
     formatPrice
 } from '../common/global-function.js'
-const url = "http://kdt-sw-6-team04.elicecoding.com:3000/";
+const url = "http://localhost:3000/";
 // url로 가기
 const moveToPath=(path)=>{
     window.location.href = `../product_detail/product_detail.html?shortid=${path}`

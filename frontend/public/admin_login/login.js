@@ -3,7 +3,7 @@ import { sendPostRequest } from "../api/api.js";
 const emailInput = document.querySelector("#email");
 const passwordInput = document.querySelector("#password");
 const buttonSubmit = document.getElementById("buttonId");
-const url = "http://kdt-sw-6-team04.elicecoding.com:3000/";
+const url = "http://localhost:3000/";
 
 buttonSubmit.addEventListener("click", login);
 

@@ -34,34 +34,6 @@ const trdCheckInput = document.querySelector("#third-ok");
 const button = document.getElementById("buttonId");
 button.addEventListener("click", register);
 
-// function sendPostRequest(url, data) {
-// 	return fetch(url, {
-// 		method: "POST",
-// 		headers: {
-// 			authorization: `bearer ${localStorage.getItem("accessToken")}`,
-// 			"Content-Type": "application/json",
-// 		},
-// 		body: JSON.stringify(data),
-// 	  })
-//   	.then((response) => {
-      
-// 			if (!response.ok) {
-//         
-
-// 				throw new Error("err", err);
-// 			}
-// 			return response.json();
-// 		})
-// 		.catch((error) => {
-      
-//       alert(`문제가 발생했습니다. 다시 시도해주세요`);
-// 			throw new Error(
-// 				"There was a problem with the POST request:",
-// 				error
-// 			);
-// 		});
-// }
-
 async function register(e) {
 	e.preventDefault();
 
@@ -135,7 +107,7 @@ async function register(e) {
 			phone,
 		};
 		await sendPostRequest(
-			`http://kdt-sw-6-team04.elicecoding.com:3000/account`,
+			`http://localhost:3000/account`,
 			data
 		);
 
