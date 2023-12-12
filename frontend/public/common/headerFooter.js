@@ -97,9 +97,12 @@ async function getCategory() {
         const res = await fetch("http://localhost:3000/category");
         const data = await res.json()
         const centerUiEle= document.getElementById('center_ui');
+        centerUiEle.innerHTML = `
+        <li><a href="#">전체</a></li>
+        `
         data.map((item)=>{
             centerUiEle.innerHTML += `
-            <li>${item.name}</li>`
+            <li><a href="#">${item.name}</a></li>`
         })
         return data;
     } catch (e) {

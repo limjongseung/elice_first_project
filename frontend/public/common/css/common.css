@@ -50,6 +50,17 @@ a{
     align-items: center;
     color: white;
 }
+#header .center_ui{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+#header .center_ui li a{
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+}
+
 #header .header_right i{
     font-size: 50px;
     color: white;
