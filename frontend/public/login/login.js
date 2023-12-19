@@ -33,7 +33,7 @@ async function login(e) {
 
 try {
   
-  const returnToken = await sendPostRequest(`http://localhost:3000/account/login`, data)
+  const returnToken = await sendPostRequest(`https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/account/login`, data)
   const { accessToken, refreshToken } = returnToken;
 
   localStorage.setItem('accessToken', accessToken);

@@ -9,7 +9,7 @@ import {
 // 	deleteAccount
 // } from '/shopping_project_4team/frontend/public/api/userapi.js'
 //url 설정
-const url_local = "http://localhost:3000/";
+const url_local = "https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/";
 
 // html element 가져오기
 
@@ -151,7 +151,7 @@ const productGetFunction = (id) => {
 				const productElement = document.createElement("div");
 				productElement.className = "product_detail";
 				productElement.setAttribute("data-shortid", item.shortId);
-				const img_url = `http://localhost:3000/product/imgs/${item.img}`;
+				const img_url = `https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/product/imgs/${item.img}`;
 				productElement.innerHTML = `
 								<div class="product_img_wrap">
 									<img src="${img_url}" alt="">

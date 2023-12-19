@@ -19,7 +19,7 @@ const password = passwordInput.value;
 const password2 = password2Input.value;
 
 const button = document.getElementById('buttonId');
-const url = "http://localhost:3000/";
+const url = "https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/";
 // 유효성 검사 함수
 function Validcheck() {
   if (!/^\d{3}-\d{3,4}-\d{4}$/.test(phone)) {

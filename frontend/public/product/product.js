@@ -14,14 +14,14 @@ async  function renderProduct(productData) {
         <p>Description: ${productData[0].description}</p>
         <!-- Add more properties as needed -->
 
-        <img src="http://localhost:3000/product/imgs/${productData[0].img}" alt="${productData[0].name}">
+        <img src="https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/product/imgs/${productData[0].img}" alt="${productData[0].name}">
 
         <p>Company: ${productData[0].company}</p>
     `;
 }
 async function getProduct(productId){
     try{
-         const res =await  fetch(`http://localhost:3000/product?categoryShortId=${productId}`)
+         const res =await  fetch(`https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/product?categoryShortId=${productId}`)
          const data =await  res.json();
          console.log(data);
           await renderProduct(data);

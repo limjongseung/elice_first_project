@@ -107,7 +107,7 @@ async function register(e) {
 			phone,
 		};
 		await sendPostRequest(
-			`http://localhost:3000/account`,
+			`https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/account`,
 			data
 		);
 

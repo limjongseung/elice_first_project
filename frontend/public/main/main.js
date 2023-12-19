@@ -6,7 +6,7 @@ import {
 import{
     formatPrice
 } from '../common/global-function.js'
-const url = "http://localhost:3000/";
+const url = "https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/";
 // url로 가기
 const moveToPath=(path)=>{
     window.location.href = `../product_detail/product_detail.html?shortid=${path}`
