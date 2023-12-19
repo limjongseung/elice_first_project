@@ -18,12 +18,9 @@ function createHeader() {
 	a2.appendChild(img);
 	li2.appendChild(a2);
 
-
-    let centerUI = document.createElement('ul');
-    centerUI.className = 'center_ui';
-    centerUI.id = 'center_ui';
-
-
+	let centerUI = document.createElement("ul");
+	centerUI.className = "center_ui";
+	centerUI.id = "center_ui";
 
 	// <ul> 요소 생성 (오른쪽)
 	let rightUl = document.createElement("ul");
@@ -81,7 +78,7 @@ function createHeader() {
 	rightUl.appendChild(li5);
 	rightUl.appendChild(li6);
 	header.appendChild(leftUl);
-    header.appendChild(centerUI);
+	header.appendChild(centerUI);
 	header.appendChild(rightUl);
 	// 생성한 모든 요소들을 조합
 	leftUl.appendChild(li2);
@@ -90,27 +87,42 @@ function createHeader() {
 	document.body.prepend(header);
 }
 createHeader();
-//center UI 랜더링 
-// todo : 이름과 해당되는 페이지로 갈수 있는 기능 첨가
-async function getCategory() {
-    try {
-        const res = await fetch("http://localhost:3000/category");
-        const data = await res.json()
-        const centerUiEle= document.getElementById('center_ui');
-        centerUiEle.innerHTML = `
-        <li><a href="#">전체</a></li>
-        `
-        data.map((item)=>{
-            centerUiEle.innerHTML += `
-            <li><a href="#">${item.name}</a></li>`
-        })
-        return data;
-    } catch (e) {
-        console.log(e);
-    }
-};
-getCategory();
+//center UI 랜더링
+async function navigateToCategory(categoryShortId) {
+	try {
+		const productUrl = `/frontend/public/product/?id=${categoryShortId}`;
+        window.location.href = productUrl;
+		const res = await fetch(`http://localhost:3000/product?categoryShortId=${categoryShortId}`);
+		const categoryData = await res.json();
+		console.log(categoryData)
+	} catch (error) {
+		console.error(
+			`카테고리 데이터를 불러오는 중 오류가 발생했습니다: ${error}`
+		);
+	}
+}
 
+async function getCategory() {
+	try {
+		const res = await fetch("http://localhost:3000/category");
+		const data = await res.json();
+		console.log(data);
+
+		const centerUiEle = document.getElementById("center_ui");
+		centerUiEle.innerHTML = `<li><a href="#" onClick="navigateToCategory('전체')">All</a></li>`;
+
+		data.map((item) => {
+			centerUiEle.innerHTML += `
+            <li><a href="#" onClick="navigateToCategory('${item.shortId}')">${item.name}</a></li>`;
+		});
+
+		return data;
+	} catch (e) {
+		console.error(e);
+	}
+}
+
+getCategory();
 
 // JavaScript 함수로 footer를 생성
 function createFooter() {

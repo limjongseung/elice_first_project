@@ -151,7 +151,7 @@ const productGetFunction = (id) => {
 				const productElement = document.createElement("div");
 				productElement.className = "product_detail";
 				productElement.setAttribute("data-shortid", item.shortId);
-				const img_url = `http://kdt-sw-6-team04.elicecoding.com:3000/product/imgs/${item.img}`;
+				const img_url = `http://localhost:3000/product/imgs/${item.img}`;
 				productElement.innerHTML = `
 								<div class="product_img_wrap">
 									<img src="${img_url}" alt="">
