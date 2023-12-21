@@ -1,0 +1,11 @@
+#productContainer{
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+}
+#productContainer .product_wrap{
+    text-align: center;
+}
+#productContainer .product_wrap img{
+    width: 300px;
+}

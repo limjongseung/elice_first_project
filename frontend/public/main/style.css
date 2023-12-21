@@ -54,6 +54,10 @@ body {
 	margin: 0 20px;
 	cursor: pointer;
 }
+.shoes_price{
+	color: #008bcc;
+	font-weight: bold;
+}
 @keyframes autoSlide {
 	0%{
 transform: translate(0,0);
