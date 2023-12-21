@@ -16,8 +16,9 @@ const productGetFunction = async (id) => {
     if(!id){
           const data = await sendGetRequest(`${url}product`);
     const contentSectionBody = document.getElementById('contentSectionBody');
+    const contentSectionBody2 = document.getElementById('contentSectionBody2');
     contentSectionBody.innerHTML = '';
-
+    contentSectionBody2.innerHTML="";
     data.forEach(item => {
         const itemElement = document.createElement('div');
         itemElement.className = 'content_shoes';
@@ -36,35 +37,31 @@ const productGetFunction = async (id) => {
 
         // 각 항목에 클릭 이벤트 리스너 추가
         itemElement.addEventListener('click', function () {
+            moveToPath(item.shortId);
+        });
+    });
+    data.forEach(item => {
+        const itemElement2= document.createElement('div');
+        itemElement2.className = 'content_shoes';
+        const itemPrice = formatPrice(item.price)
+        itemElement2.innerHTML = `
+        <div data-shortid='${item.shortId}' class='content_shoes_detail'>
+            <img
+                src="${url}product/imgs/${item.img}"
+                alt="${item.description}"
+            />
+        </div>
+        <p class="shoes_title">${item.name}</p>
+        <p class="shoes_price">${itemPrice} 원</p>`;
+
+        contentSectionBody2.appendChild(itemElement2);
+
+        // 각 항목에 클릭 이벤트 리스너 추가
+        itemElement2.addEventListener('click', function () {
             moveToPath(item.shortId);
         });
     });
     }
-    const data = await sendGetRequest(`${url}product?categoryShortId=${id}`);
-    const contentSectionBody = document.getElementById('contentSectionBody');
-    contentSectionBody.innerHTML = '';
-
-    data.forEach(item => {
-        const itemElement = document.createElement('div');
-        itemElement.className = 'content_shoes';
-        const itemPrice = formatPrice(item.price)
-        itemElement.innerHTML = `
-        <div data-shortid='${item.shortId}' class='content_shoes_detail'>
-            <img
-                src="${url}product/imgs/${item.img}"
-                alt="${item.description}"
-            />
-        </div>
-        <p class="shoes_title">${item.name}</p>
-        <p class="shoes_price">${itemPrice} 원</p>`;
-
-        contentSectionBody.appendChild(itemElement);
-
-        // 각 항목에 클릭 이벤트 리스너 추가
-        itemElement.addEventListener('click', function () {
-            moveToPath(item.shortId);
-        });
-    });
 };
 productGetFunction();
 
