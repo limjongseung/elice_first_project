@@ -66,53 +66,53 @@ const productGetFunction = async (id) => {
         });
     });
 };
-
+productGetFunction();
 
 // 카테고리 랜더링
 // 관련한 상품 랜더링
-async function categoryRendering() {
-    try {
-        const data = await sendGetRequest(`${url}category`);
-        const categoryList = document.getElementById("category_list");
-        let currentFocusedItem = null; // 현재 초점이 맞춰진 항목을 추적하는 변수
+// async function categoryRendering() {
+//     try {
+//         const data = await sendGetRequest(`${url}category`);
+//         const categoryList = document.getElementById("category_list");
+//         let currentFocusedItem = null; // 현재 초점이 맞춰진 항목을 추적하는 변수
 
-        // "전체" 항목을 만듭니다.
-        const allCategoryElement = document.createElement("div");
-        allCategoryElement.className = "category_list_item";
-        allCategoryElement.innerText = "전체";
-        categoryList.appendChild(allCategoryElement);
-        allCategoryElement.addEventListener('click',()=>{
-            productGetFunction();
-        })
-
-
-        data.forEach((item) => {
-            const itemElement = document.createElement("div");
-            itemElement.className = "category_list_item";
-            itemElement.innerText = item.name;
-            itemElement.setAttribute("data-shortid", item.shortId);
-            categoryList.appendChild(itemElement);
-
-            itemElement.addEventListener("click", () => {
-                // 이전에 초점이 맞춰진 항목에서 'focus' 클래스를 제거합니다.
-                if (currentFocusedItem) {
-                    currentFocusedItem.classList.remove('focus');
-                }
-
-                // 클릭한 항목에 'focus' 클래스를 추가
-                itemElement.classList.add('focus');
-                currentFocusedItem = itemElement; // 현재 초점이 맞춰진 항목을 업데이트합니다.
-
-                productGetFunction(item.shortId);
-            });
-        });
-    } catch (error) {
-        console.error(error);
-    }
-}
+//         // "전체" 항목을 만듭니다.
+//         const allCategoryElement = document.createElement("div");
+//         allCategoryElement.className = "category_list_item";
+//         allCategoryElement.innerText = "전체";
+//         categoryList.appendChild(allCategoryElement);
+//         allCategoryElement.addEventListener('click',()=>{
+//             productGetFunction();
+//         })
 
 
-categoryRendering();
+//         data.forEach((item) => {
+//             const itemElement = document.createElement("div");
+//             itemElement.className = "category_list_item";
+//             itemElement.innerText = item.name;
+//             itemElement.setAttribute("data-shortid", item.shortId);
+//             categoryList.appendChild(itemElement);
+
+//             itemElement.addEventListener("click", () => {
+//                 // 이전에 초점이 맞춰진 항목에서 'focus' 클래스를 제거합니다.
+//                 if (currentFocusedItem) {
+//                     currentFocusedItem.classList.remove('focus');
+//                 }
+
+//                 // 클릭한 항목에 'focus' 클래스를 추가
+//                 itemElement.classList.add('focus');
+//                 currentFocusedItem = itemElement; // 현재 초점이 맞춰진 항목을 업데이트합니다.
+
+//                 productGetFunction(item.shortId);
+//             });
+//         });
+//     } catch (error) {
+//         console.error(error);
+//     }
+// }
+
+
+// categoryRendering();
 // slick slider script 
 $(".ad_section").slick({
     infinite: true,
