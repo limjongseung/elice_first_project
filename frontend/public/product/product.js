@@ -1,5 +1,7 @@
 import { formatPrice } from "/frontend/public/common/global-function.js";
 //params가져오기
+const url = "https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/";
+const url_local = "http://localhost:3000/"
 function getQueryParam(name) {
 	const urlSearchParams = new URLSearchParams(window.location.search);
 	return urlSearchParams.get(name);
@@ -11,7 +13,7 @@ async function renderProduct(productData) {
     item.price = formatPrice(item.price);
 		productContainer.innerHTML += `
         <div class="product_wrap">
-        <img src="https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/product/imgs/${item.img}" alt="${item.name}">
+        <img src="${url_local}product/imgs/${item.img}" alt="${item.name}">
         <h4 class="product_name">${item.name}</h4>
   <p class="product_name"> ${item.price}원</p>
 `;
@@ -20,7 +22,7 @@ async function renderProduct(productData) {
 async function getProduct(productId) {
 	try {
 		const res = await fetch(
-			`https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/product?categoryShortId=${productId}`
+			`${url_local}product?categoryShortId=${productId}`
 		);
 		const data = await res.json();
 		console.log(data);

@@ -88,11 +88,14 @@ function createHeader() {
 }
 createHeader();
 //center UI 랜더링
+
+const url_local = "http://localhost:3000/"
+const url = "https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/";
 async function navigateToCategory(categoryShortId) {
 	try {
 		const productUrl = `/frontend/public/product/?id=${categoryShortId}`;
         window.location.href = productUrl;
-		const res = await fetch(`https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/product?categoryShortId=${categoryShortId}`);
+		const res = await fetch(`${url_local}product?categoryShortId=${categoryShortId}`);
 		const categoryData = await res.json();
 		console.log(categoryData)
 	} catch (error) {
@@ -104,7 +107,7 @@ async function navigateToCategory(categoryShortId) {
 
 async function getCategory() {
 	try {
-		const res = await fetch("https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/category");
+		const res = await fetch(`${url_local}category`);
 		const data = await res.json();
 		console.log(data);
 

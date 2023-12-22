@@ -2,7 +2,8 @@ import { sendPostRequest } from "../api/api.js";
 
 const terms = document.querySelector("#terms");
 const termClick = document.querySelector("#agree");
-
+const url = "https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/";
+const url_local = "http://localhost:3000/"
 terms.addEventListener("click", () => {
 	console.log("showhide");
 	showHide();
@@ -32,6 +33,7 @@ const infoCheckInput = document.querySelector("#info-ok");
 const trdCheckInput = document.querySelector("#third-ok");
 
 const button = document.getElementById("buttonId");
+
 button.addEventListener("click", register);
 
 async function register(e) {
@@ -107,7 +109,7 @@ async function register(e) {
 			phone,
 		};
 		await sendPostRequest(
-			`https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/account`,
+			`${url_local}account`,
 			data
 		);
 

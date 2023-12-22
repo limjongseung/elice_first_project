@@ -4,6 +4,7 @@ const emailInput = document.querySelector("#email");
 const passwordInput = document.querySelector("#password");
 const buttonSubmit = document.getElementById("buttonId");
 const url = "https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/";
+const url_local = "http://localhost:3000/"
 
 buttonSubmit.addEventListener("click", login);
 
@@ -30,7 +31,7 @@ async function login(e) {
 		password,
 	};
 
-	await sendPostRequest(`${url}admin/login`, data)
+	await sendPostRequest(`${url_local}admin/login`, data)
 		.then(async (res) => {
 			const responseBody = await res;
 			const { accessToken, refreshToken } = responseBody;

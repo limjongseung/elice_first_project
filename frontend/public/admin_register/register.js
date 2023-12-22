@@ -20,6 +20,7 @@ const password2 = password2Input.value;
 
 const button = document.getElementById('buttonId');
 const url = "https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/";
+const url_local = "http://localhost:3000/"
 // 유효성 검사 함수
 function Validcheck() {
   if (!/^\d{3}-\d{3,4}-\d{4}$/.test(phone)) {
@@ -78,7 +79,7 @@ async function register(e) {
   // Validcheck()
   const data = JSON.stringify({ email, name, nickname, password, mobile, phone });
   try{
-      await sendPostRequest(`${url}admin`, data)
+      await sendPostRequest(`${url_local}admin`, data)
       alert('회원가입이 완료되었습니다.')
       window.location.href = "/account/login";
   }catch(error){

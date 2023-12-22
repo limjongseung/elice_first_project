@@ -6,15 +6,16 @@ import {
 import{
     formatPrice
 } from '../common/global-function.js'
-const url = "https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/";
-// url로 가기
+
+
+// url_local로 가기
 const moveToPath=(path)=>{
     window.location.href = `../product_detail/product_detail.html?shortid=${path}`
 }
 //상품목록 랜더링 함수
 const productGetFunction = async (id) => {
     if(!id){
-          const data = await sendGetRequest(`${url}product`);
+          const data = await sendGetRequest(`${url_local}product`);
     const contentSectionBody = document.getElementById('contentSectionBody');
     const contentSectionBody2 = document.getElementById('contentSectionBody2');
     contentSectionBody.innerHTML = '';
@@ -26,7 +27,7 @@ const productGetFunction = async (id) => {
         itemElement.innerHTML = `
         <div data-shortid='${item.shortId}' class='content_shoes_detail'>
             <img
-                src="${url}product/imgs/${item.img}"
+                src="${url_local}product/imgs/${item.img}"
                 alt="${item.description}"
             />
         </div>
@@ -47,7 +48,7 @@ const productGetFunction = async (id) => {
         itemElement2.innerHTML = `
         <div data-shortid='${item.shortId}' class='content_shoes_detail'>
             <img
-                src="${url}product/imgs/${item.img}"
+                src="${url_local}product/imgs/${item.img}"
                 alt="${item.description}"
             />
         </div>
@@ -69,7 +70,7 @@ productGetFunction();
 // 관련한 상품 랜더링
 // async function categoryRendering() {
 //     try {
-//         const data = await sendGetRequest(`${url}category`);
+//         const data = await sendGetRequest(`${url_local}category`);
 //         const categoryList = document.getElementById("category_list");
 //         let currentFocusedItem = null; // 현재 초점이 맞춰진 항목을 추적하는 변수
 
