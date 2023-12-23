@@ -41,3 +41,10 @@ document.addEventListener("DOMContentLoaded", function () {
 	// 상품 데이터 가져오기 및 렌더링
 	getProduct(productId);
 });
+
+
+$(".ad_section").slick({
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+});
