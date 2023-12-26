@@ -22,11 +22,18 @@ async function renderProduct(productData) {
 }
 async function getProduct(productId) {
 	try {
-		const res = await fetch(`${url_local}product?categoryShortId=${productId}`);
+		let res;
+
+		if (productId == "전체") {
+            res = await fetch(`${url_local}product`);
+        } else {
+            res = await fetch(`${url_local}product?categoryShortId=${productId}`);
+        }
+
 		const data = await res.json();
 		console.log(data);
 		await renderProduct(data);
-	} catch (e) {
+	} catch (error) {
 		console.error(`Error fetching product data: ${error}`);
 	}
 }
@@ -36,7 +43,6 @@ async function getProduct(productId) {
 document.addEventListener("DOMContentLoaded", function () {
 	// URL에서 상품 ID를 가져오기
 	const productId = getQueryParam("id");
-
 	// 상품 데이터 가져오기 및 렌더링
 	getProduct(productId);
 });

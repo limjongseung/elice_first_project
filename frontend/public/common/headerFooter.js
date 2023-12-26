@@ -89,15 +89,27 @@ function createHeader() {
 createHeader();
 //center UI 랜더링
 
-const url_local = "http://localhost:3000/"
-const url = "https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/";
+const url_local = "http://localhost:3000/";
+const url =
+	"https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/";
 async function navigateToCategory(categoryShortId) {
 	try {
+		if (categoryShortId === "전체") {
+			const productUrl = `/frontend/public/product/?id=${categoryShortId}`;
+			window.location.href = productUrl;
+			const res = await fetch(
+				`${url_local}product`
+			);
+			const categoryData = await res.json();
+			console.log(categoryData);
+		}
 		const productUrl = `/frontend/public/product/?id=${categoryShortId}`;
-        window.location.href = productUrl;
-		const res = await fetch(`${url_local}product?categoryShortId=${categoryShortId}`);
+		window.location.href = productUrl;
+		const res = await fetch(
+			`${url_local}product?categoryShortId=${categoryShortId}`
+		);
 		const categoryData = await res.json();
-		console.log(categoryData)
+		console.log(categoryData);
 	} catch (error) {
 		console.error(
 			`카테고리 데이터를 불러오는 중 오류가 발생했습니다: ${error}`
