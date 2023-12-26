@@ -9,3 +9,14 @@ flex-wrap: wrap;
 #productContainer .product_wrap img{
     width: 300px;
 }
+.slick-prev.slick-arrow,
+.slick-next.slick-arrow {
+	display: none !important;
+}
+.slick-list {
+	width: 1260px !important;
+	margin: 0 auto !important;
+}
+.ad_section{
+    margin: 20px 0;
+}
