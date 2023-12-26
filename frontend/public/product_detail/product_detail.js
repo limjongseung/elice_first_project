@@ -9,6 +9,8 @@ const descriptionTag = document.querySelector("#description");
 
 const button_cart = document.querySelector("#button_cart");
 const button_purchase = document.querySelector("#button_purchase");
+const url = "https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app/";
+const url_local = "http://localhost:3000/"
 
 async function insertItem() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -22,12 +24,11 @@ async function insertItem() {
 
     try {
         const data = await sendGetRequest(
-            `http://kdt-sw-6-team04.elicecoding.com:3000/product/${shortid}`
+            `${url_local}product/${shortid}`
         );
-        console.log(data);
 
         nameTag.innerText = data.name;
-        imgTag.src = `http://kdt-sw-6-team04.elicecoding.com:3000/product/imgs/${data.img}`;
+        imgTag.src = `${url_local}product/imgs/${data.img}`;
         const dataPrice = formatPrice(data.price);
         companyTag.innerHTML = data.company;
         priceTag.innerText = `${dataPrice}원`;
