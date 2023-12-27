@@ -88,13 +88,3 @@ async function insertItem() {
 }
 
 insertItem();
-
-
-
-//function moveToPath(path){
-//  return function () {
-//    window.location.href = path;
-//  }
-//}
-//
-//사진.addEventListener('click',moveToPath(`/product/${shortId}`))

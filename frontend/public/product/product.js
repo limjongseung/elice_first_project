@@ -7,13 +7,23 @@ function getQueryParam(name) {
 	const urlSearchParams = new URLSearchParams(window.location.search);
 	return urlSearchParams.get(name);
 }
+
+
+const productContainer = document.getElementById("productContainer");
+productContainer.addEventListener("click", function (event) {
+    const targetProduct = event.target.closest(".product_wrap");
+    if (targetProduct) {
+        const shortId = targetProduct.dataset.shortid;
+		const productUrl = `/frontend/public/product_detail/product_detail.html?shortid=${shortId}`;
+		window.location.href = productUrl;
+    }
+});
 async function renderProduct(productData) {
 	const productContainer = document.getElementById("productContainer");
 	productData.map((item) => {
-		// Create HTML elements for each product property
 		item.price = formatPrice(item.price);
 		productContainer.innerHTML += `
-        <div class="product_wrap">
+        <div data-shortid=${item.shortId} class="product_wrap" >
         <img src="${url_local}product/imgs/${item.img}" alt="${item.name}">
         <h4 class="product_name">${item.name}</h4>
   <p class="product_name"> ${item.price}원</p>

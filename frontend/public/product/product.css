@@ -7,6 +7,7 @@ margin: 0 auto;
 }
 #productContainer .product_wrap{
     text-align: center;
+    cursor: pointer;
 }
 #productContainer .product_wrap img{
     width: 300px;
