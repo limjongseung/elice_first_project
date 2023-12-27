@@ -38,7 +38,7 @@ body {
 .content_section_body {
 	display: flex;
 	justify-content: space-between;
-	animation: autoSlide 20s infinite;
+	animation: autoSlide 20s infinite linear;
 	margin-bottom: 30px;
 }
 .content_section_body .content_shoes{
@@ -48,7 +48,7 @@ body {
 .content_section_body_second{
 	display: flex;
 	justify-content: space-between;
-	animation: autoSlide2 20s infinite;
+	animation: autoSlide2 20s infinite linear;
 }
 .content_section_body_second .content_shoes{
 	margin: 0 20px;
@@ -60,18 +60,18 @@ body {
 }
 @keyframes autoSlide {
 	0%{
-transform: translate(0,0);
+transform: translate(-50%,0);
 	}
 	100%{
-		transform: translate(-50%,0);
+		transform: translate(-300%,0);
 	}
 }
 @keyframes autoSlide2 {
 	0%{
-transform: translate(-50%,0);
+transform: translate(-300%,0);
 	}
 	100%{
-		transform: translate(0,0);
+		transform: translate(-50%,0);
 	}
 }
 .content_section_body .content_shoes {
