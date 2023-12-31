@@ -7,7 +7,7 @@ main {
     width: 100%;
     padding-top: 100px;
     padding-bottom: 100px;
-    min-height: 73vh;
+    min-height: 80vh;
 }
 
 .container {
@@ -103,26 +103,7 @@ td.checkbox {
     display: none;
 }
 
-/*
-td.product_detail#product_detail {
-    flex-grow: 0px
-}
 
-td.product_detail.fixed-width-product-detail{
-    width: 120px;
-    height: 100px;
-}
-
- */
-
-/* #table_body tr td.checkbox,
-#table_head tr th .masterCheckbox {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    margin: 0px;
-    width: 20px;
-} */
 
 i {
     padding: 3px;

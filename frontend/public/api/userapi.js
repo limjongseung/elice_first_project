@@ -1,4 +1,4 @@
-const BASE = "http://kdt-sw-6-team04.elicecoding.com:3000";
+const BASE = "https://port-0-elice-first-project-backend-12fhqa2llo78zgu7.sel5.cloudtype.app";
 
 // 로그인한 사용자 데이터 api > JWT 토큰을 헤더에 담아 서버에 보냄
 export async function getAccount(URL) {
