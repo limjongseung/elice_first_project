@@ -79,7 +79,7 @@ async function register(e) {
   // Validcheck()
   const data = JSON.stringify({ email, name, nickname, password, mobile, phone });
   try{
-      await sendPostRequest(`${url_local}admin`, data)
+      await sendPostRequest(`${url}admin`, data)
       alert('회원가입이 완료되었습니다.')
       window.location.href = "/account/login";
   }catch(error){

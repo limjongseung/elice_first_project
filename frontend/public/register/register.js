@@ -109,7 +109,7 @@ async function register(e) {
 			phone,
 		};
 		await sendPostRequest(
-			`${url_local}account`,
+			`${url}account`,
 			data
 		);
 

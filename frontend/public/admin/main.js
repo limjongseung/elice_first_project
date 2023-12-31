@@ -58,7 +58,7 @@ deliveryBtn.addEventListener("click", function () {
 // 삭제시 조회 랜더링 , 수정시, 추가시 필요하기에 함수로 변환
 const categoryGetFunction = async () => {
 	try {
-		const data = await sendGetRequest(`${url_local}category`);
+		const data = await sendGetRequest(`${url}category`);
 		const categoryList = document.getElementById("category_content");
 		categoryList.innerHTML = ""; // 이전 내용을 지우고 다시 채우기
 
@@ -86,7 +86,7 @@ const categoryGetFunction = async () => {
 
 			deleteButton.addEventListener("click", async () => {
 				const shortId = deleteButton.getAttribute("data-shortid");
-				const url = `${url_local}category/${shortId}`;
+				const url = `${url}category/${shortId}`;
 				try {
 					await sendDeleteRequest(url);
 					await categoryGetFunction();
@@ -111,7 +111,7 @@ categoryGetFunction();
 //카테고리 버튼을 통한 post 요청
 categoryAddBtn.addEventListener("click", async function () {
 	const categoryInput = document.getElementById("category_input");
-	const url = `${url_local}category`;
+	const url = `${url}category`;
 	const categoryName = categoryInput.value;
 	await sendPostRequest(url, { name: categoryName })
 		.then((responseData) => {})
@@ -125,7 +125,7 @@ categoryAddBtn.addEventListener("click", async function () {
 
 // 수정 버튼을 통한 카테고리명 수정  요청
 categoryModiBtn.addEventListener("click", async function () {
-	const url = `${url_local}category/${modiInputId.value}`;
+	const url = `${url}category/${modiInputId.value}`;
 
 	try {
 		await sendPostCategoryModiRequest(url, { name: modiInputName.value });
@@ -143,7 +143,7 @@ categoryModiBtn.addEventListener("click", async function () {
 
 //상품리스트 랜더링 함수
 const productGetFunction = (id) => {
-	sendGetRequest(`${url_local}product?categoryShortId=${id}`)
+	sendGetRequest(`${url}product?categoryShortId=${id}`)
 		.then((data) => {
 			productListContent.innerHTML = "";
 			console.log(data);
@@ -151,7 +151,7 @@ const productGetFunction = (id) => {
 				const productElement = document.createElement("div");
 				productElement.className = "product_detail";
 				productElement.setAttribute("data-shortid", item.shortId);
-				const img_url = `${url_local}product/imgs/${item.img}`;
+				const img_url = `${url}product/imgs/${item.img}`;
 				productElement.innerHTML = `
 								<div class="product_img_wrap">
 									<img src="${img_url}" alt="">
@@ -180,7 +180,7 @@ const productGetFunction = (id) => {
 // 상품 목록을 위한 카테고리 get요청 후 랜더링 함수 호출
 const categoryListRender = async () => {
 	try {
-		const data = await sendGetRequest(`${url_local}category`);
+		const data = await sendGetRequest(`${url}category`);
 		const productListHeaderCategory = document.querySelector(
 			".product_list_header_category"
 		);
@@ -249,7 +249,7 @@ productFormBtn.addEventListener("click", async () => {
 	console.log("  formData.has(name)", formData.has("name"));
 	try {
 		// POST 요청
-		const response = await fetch(`${url_local}product`, {
+		const response = await fetch(`${url}product`, {
 			method: "POST",
 			headers: {
 				authorization: `bearer ${localStorage.getItem("accessToken")}`
@@ -268,7 +268,7 @@ productFormBtn.addEventListener("click", async () => {
 selectProductDelteBtn.addEventListener("click", async () => {
 	try {
 		const deleteShortId = document.getElementById("delete_short_id");
-		await sendDeleteRequest(`${url_local}product/${deleteShortId.value}`);
+		await sendDeleteRequest(`${url}product/${deleteShortId.value}`);
 		deleteShortId.value = '';
 	} catch (error) {
 		console.log(error);

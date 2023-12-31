@@ -98,7 +98,7 @@ async function navigateToCategory(categoryShortId) {
 			const productUrl = `/frontend/public/product/?id=${categoryShortId}`;
 			window.location.href = productUrl;
 			const res = await fetch(
-				`${url_local}product`
+				`${url}product`
 			);
 			const categoryData = await res.json();
 			console.log(categoryData);
@@ -106,7 +106,7 @@ async function navigateToCategory(categoryShortId) {
 		const productUrl = `/frontend/public/product/?id=${categoryShortId}`;
 		window.location.href = productUrl;
 		const res = await fetch(
-			`${url_local}product?categoryShortId=${categoryShortId}`
+			`${url}product?categoryShortId=${categoryShortId}`
 		);
 		const categoryData = await res.json();
 		console.log(categoryData);
@@ -119,7 +119,7 @@ async function navigateToCategory(categoryShortId) {
 
 async function getCategory() {
 	try {
-		const res = await fetch(`${url_local}category`);
+		const res = await fetch(`${url}category`);
 		const data = await res.json();
 		console.log(data);
 

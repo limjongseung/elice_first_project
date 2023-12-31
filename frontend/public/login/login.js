@@ -35,7 +35,7 @@ async function login(e) {
 
 try {
   
-  const returnToken = await sendPostRequest(`${url_local}account/login`, data)
+  const returnToken = await sendPostRequest(`${url}account/login`, data)
   const { accessToken, refreshToken } = returnToken;
 
   localStorage.setItem('accessToken', accessToken);

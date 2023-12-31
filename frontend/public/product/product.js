@@ -45,7 +45,7 @@ async function renderProduct(productData, itemsPerPage, currentPage) {
 		item.price = formatPrice(item.price);
 		productContainer.innerHTML += `
 		  <div data-shortid=${item.shortId} class="product_wrap" >
-			<img src="${url_local}product/imgs/${item.img}" alt="${item.name}">
+			<img src="${url}product/imgs/${item.img}" alt="${item.name}">
 			<h4 class="product_name">${item.name}</h4>
 			<p class="product_name">${item.price}원</p>
 		  </div>
@@ -88,9 +88,9 @@ async function getProduct(productId) {
 		let res;
 
 		if (productId == "전체") {
-			res = await fetch(`${url_local}product`);
+			res = await fetch(`${url}product`);
 		} else {
-			res = await fetch(`${url_local}product?categoryShortId=${productId}`);
+			res = await fetch(`${url}product?categoryShortId=${productId}`);
 		}
 
 		// 전역 변수인 productData에 결과를 할당
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	async function getCategory() {
 		try {
-			const data = await fetch(`${url_local}category`);
+			const data = await fetch(`${url}category`);
 			const res = await data.json();
 			// Corrected the comparison to use === for strict equality
 			const filteredCategory = res.filter((item) => item.shortId === shortId);

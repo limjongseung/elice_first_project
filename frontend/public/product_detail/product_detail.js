@@ -24,11 +24,11 @@ async function insertItem() {
 
     try {
         const data = await sendGetRequest(
-            `${url_local}product/${shortid}`
+            `${url}product/${shortid}`
         );
 
         nameTag.innerText = data.name;
-        imgTag.src = `${url_local}product/imgs/${data.img}`;
+        imgTag.src = `${url}product/imgs/${data.img}`;
         const dataPrice = formatPrice(data.price);
         companyTag.innerHTML = data.company;
         priceTag.innerText = `${dataPrice}원`;

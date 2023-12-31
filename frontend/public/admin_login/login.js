@@ -31,7 +31,7 @@ async function login(e) {
 		password,
 	};
 
-	await sendPostRequest(`${url_local}admin/login`, data)
+	await sendPostRequest(`${url}admin/login`, data)
 		.then(async (res) => {
 			const responseBody = await res;
 			const { accessToken, refreshToken } = responseBody;
