@@ -31,13 +31,14 @@
 }
 #paginationContainer button.current {
     color: white;
-	background-color: blue;
+	background-color: #485B87;
 	border-radius: 50%;
 }
 /* product pagination */
 #paginationContainer {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	margin: 20px 0;
 }
 #paginationContainer button {
@@ -47,4 +48,10 @@
 	font-size: 15px;
 	font-weight: 600;
 	cursor: pointer;
+	margin: 0 8px;
 }
+#paginationContainer i {
+	font-size: 15px;
+	cursor: pointer;
+}
+

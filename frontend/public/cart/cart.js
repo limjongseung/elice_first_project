@@ -23,7 +23,7 @@ function renderCartList() {
         const { name, img, price, totalQuantity, company, shortId: id } = item;
         const priceSum = formatPrice(totalQuantity * price); //상품별 총 합계금액
         const imgURL =
-            "http://kdt-sw-6-team04.elicecoding.com:3000/product/imgs/";
+            "http://localhost:3000/product/imgs/";
 
         //!각 체크박스의 id 속성에 상품 shortID 설정
         cartList.insertAdjacentHTML(
