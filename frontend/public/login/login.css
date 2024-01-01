@@ -1,36 +1,61 @@
-.makecenter {
-    text-align: center;
+.container{
+    min-height: 82vh;
 }
-
-a {
-    font-size: 13px;
-    margin: 0 0 10px 0;
-}
-
-#buttonId {
-    width: 100%;
+.container_content{
+    display: flex;
+    justify-content: center;
+    min-height: 82vh;
 }
 .box{
-    height: 400px !important;
-}
-#box {
-    margin-top: 10%;
-}
-#password{
-    margin-bottom: 80px !important;
-}
-.imagee {
-    margin: 0 10px 0 40px;
-}
-.hero-body{
-    height: 81vh;
-}
-.block.is-right{
-    margin-bottom: 26px !important;
-}
-.login_title{
+    width: 400px;
+    height: 250px;
     text-align: center;
-    font-size: 40px;
-    font-weight: bold;
+    margin-top: 70px;
+}
+.img_wrap{
     margin-bottom: 40px;
 }
+.field{
+    text-align: left;
+}
+.field input{
+    width: 400px;
+    height: 50px;
+    margin-bottom: 10px;
+    font-size: 23px;
+}
+.container .field .password_input{
+    margin-bottom: 10px;
+}
+#buttonId{
+    width: 400px;
+    height: 40px;
+    border: none;
+    background: #B4D4FF;
+    color: white;
+    font-size: 20px;
+    transition: all 0.3s;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+#buttonId:hover{
+    background:#86B6F6;
+}
+.register_button{
+    font-size: 20px;
+    display: block;
+    width: 400px;
+    height: 40px;
+    background:#4942E4;
+    color:white;
+    line-height: 40px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.register_button:hover{
+    background:#11009E;
+}
+
+
+
+
