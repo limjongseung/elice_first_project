@@ -111,9 +111,9 @@ categoryGetFunction();
 //카테고리 버튼을 통한 post 요청
 categoryAddBtn.addEventListener("click", async function () {
 	const categoryInput = document.getElementById("category_input");
-	const url = `${url}category`;
+	const url_cate = `${url}category`;
 	const categoryName = categoryInput.value;
-	await sendPostRequest(url, { name: categoryName })
+	await sendPostRequest(url_cate, { name: categoryName })
 		.then((responseData) => {})
 		.catch((error) => {
 			console.error("Error:", error);
