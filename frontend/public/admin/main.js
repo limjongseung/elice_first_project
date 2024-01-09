@@ -125,10 +125,10 @@ categoryAddBtn.addEventListener("click", async function () {
 
 // 수정 버튼을 통한 카테고리명 수정  요청
 categoryModiBtn.addEventListener("click", async function () {
-	const url = `${url}category/${modiInputId.value}`;
+	const url_modi = `${url}category/${modiInputId.value}`;
 
 	try {
-		await sendPostCategoryModiRequest(url, { name: modiInputName.value });
+		await sendPostCategoryModiRequest(url_modi, { name: modiInputName.value });
 		await categoryGetFunction();
 
 		// input 창 초기화
