@@ -86,9 +86,9 @@ const categoryGetFunction = async () => {
 
 			deleteButton.addEventListener("click", async () => {
 				const shortId = deleteButton.getAttribute("data-shortid");
-				const url = `${url}category/${shortId}`;
+				const url_dele = `${url}category/${shortId}`;
 				try {
-					await sendDeleteRequest(url);
+					await sendDeleteRequest(url_dele);
 					await categoryGetFunction();
 				} catch (error) {
 					console.error("Error:", error);
